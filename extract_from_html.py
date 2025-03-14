@@ -5,6 +5,7 @@
         c. add user choice to create JSON if file exists
     2. import to calendar
     3. tkinter gui showing next race on page one, full list on page 2
+    4. should probably write a batch file to run the scripts and use a config file
 """
 
 #use BeautifulSoup to extract HTML content
