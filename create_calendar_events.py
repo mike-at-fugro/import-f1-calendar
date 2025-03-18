@@ -3,6 +3,9 @@ import json
 from datetime import datetime
 
 
+#formats start time into datetime object
+#   date comes in format 'March 16'
+#   time comes in format '04:00'
 def get_start(time, date):
     month = date.split(' ')[0]
     day = date.split(' ')[1]
@@ -12,6 +15,7 @@ def get_start(time, date):
     return dt
 
 
+#see line 35 TO-DO
 def create_outlook_event(event):
     appointment = outlook.CreateItem(1) #1 refers to the appointment item
     appointment.Subject = "Grand Prix: " + event['Country']
@@ -28,4 +32,5 @@ with open('race_start_times.json', 'r') as races_file:
     race_data = json.load(races_file)
 
 for race in race_data:
+    #TO-DO: create race/event object - get attributes from the object in event function and allow for more outlook event options
     create_outlook_event(race)
